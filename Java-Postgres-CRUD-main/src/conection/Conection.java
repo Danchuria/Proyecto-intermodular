@@ -5,24 +5,24 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conection {
-	// Parámetros de conexión
+	// Parï¿½metros de conexiï¿½n
 	private static final String URL = "jdbc:postgresql://localhost:5432/ProductosDB";
 	private static final String USER = "postgres";
-	private static final String PASSWORD = "admin123";
+	private static final String PASSWORD = "postgres";
 
-	// Método para establecer la conexión
+	// Mï¿½todo para establecer la conexiï¿½n
 	public static Connection obtenerConexion() {
 		Connection conexion = null;
 		try {
 			// Registrar el controlador JDBC
 			Class.forName("org.postgresql.Driver");
-			// Establecer la conexión
+			// Establecer la conexiï¿½n
 			conexion = DriverManager.getConnection(URL, USER, PASSWORD);
-			System.out.println("Conexión exitosa a la base de datos");
+			System.out.println("Conexiï¿½n exitosa a la base de datos");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Error al cargar el controlador JDBC: " + e.getMessage());
 		} catch (SQLException e) {
-			System.out.println("Error al establecer la conexión: " + e.getMessage());
+			System.out.println("Error al establecer la conexiï¿½n: " + e.getMessage());
 		}
 		return conexion;
 	}
