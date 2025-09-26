@@ -181,32 +181,85 @@ body {
 ======================== */
 #cabeceraInferior {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* mantiene todo centrado */
   background-color: #fff;
   padding: 10px 20px;
 }
 
 #contenedorMedioInferior {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   align-items: center;
   flex-wrap: wrap;
 }
 
+/* Estilo links principales */
 .linkMid {
-  text-decoration: none;
-  color: #031b2f;
-  font-weight: 500;
-  font-size: 14px;
   display: flex;
   align-items: center;
+  gap: 5px;
+  color: #125590;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 5px 8px;
+  transition: color 0.3s, background 0.3s;
+  border-radius: 6px;
+}
+
+.linkMid:hover {
+  color: #ffffff;
+  background-color: #125590;
 }
 
 .linkMid img.iconoDesplegable {
   width: 10px;
   height: auto;
-  margin-left: 5px;
+  margin-left: 4px;
   vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover > a img.iconoDesplegable {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-top: 8px;
+  min-width: 180px;
+  z-index: 100;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #125590;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #125590;
+  color: #ffffff;
+}
+
+.iconoDropdown {
+  width: 20px;
+  height: auto;
 }
 
 /* ========================
@@ -449,3 +502,77 @@ body {
   color: #61AC57; /* verde */
   font-weight: bold;
 }
+
+/* ========================
+   CUADRO DE BÚSQUEDA
+======================== */
+#searchBox {
+  display: none; /* oculto por defecto */
+  position: absolute;
+  top: 70px; /* ajusta según altura del header */
+  right: 50px;
+  background: #fff;
+  border: 2px solid #125590;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#searchBox input {
+  width: 250px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+#searchBox {
+  display: none;                 /* oculto por defecto */
+  position: absolute;            /* relativo a la página */
+  top: 14%;                      /* lo bajamos un poco para alinearlo */
+  right: 220px;                   /* ajusta según la posición de la lupa */
+  transform: translateY(-50%);   /* lo centra verticalmente respecto al header */
+  background: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;           /* esquinas redondeadas tipo pill */
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#searchBox input {
+  width: 220px;                  /* más pequeño y elegante */
+  border: none;                  /* sin borde extra */
+  outline: none;                 /* quitamos contorno feo */
+  font-size: 14px;
+}
+
+#iconWishlist {
+  cursor: pointer;
+  transition: transform 0.2s ease, fill 0.2s ease;
+  fill: none;
+}
+
+#iconWishlist.active {
+  fill: red;        /* relleno rojo */
+  transform: scale(1.2);
+}
+
+/* NUEVAS SECCIONES DROPDOWN */
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #031b2f;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+

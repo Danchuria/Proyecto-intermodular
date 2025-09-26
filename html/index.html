@@ -96,36 +96,38 @@
           />
           <div class="contenedorCall">
             <span class="callUs">CALL US</span>
-            <p class="numTelf">+84 1800 33355</p>
+            <p class="numTelf">+64 768 345 325</p>
           </div>
         </div>
 
         <!-- CENTRO: LOGO -->
         <div id="seccionMedio">
           <div id="contenedorLogo">
-            <a href="index.html"
-              ><img
-                src="media/logos/logoEkommart.svg"
-                alt="Logo Ekommart"
-                id="logoEkommart"
-            /></a>
+            <h1><b>amamortadela</b></h1>
           </div>
         </div>
 
         <!-- DERECHA: Lupa, wishlist, carrito, usuario -->
         <div id="seccionDerecha">
-          <a href="#"
-            ><img
+          <a href="#" id="btnSearch">
+            <img
               src="media/utility/iconSearch.svg"
               alt="Search"
               id="iconSearch"
-          /></a>
-          <a href="#"
-            ><img
-              src="media/utility/iconWishlist.svg"
-              alt="Wishlist"
-              class="iconTopRight"
-          /></a>
+            />
+          </a>
+
+          <!-- CAMPO DE BÚSQUEDA OCULTO -->
+          <div id="searchBox">
+            <input type="text" placeholder="Buscar productos..." />
+          </div>
+
+          <a href="#" id="btnWishlist">
+            <svg id="iconWishlist" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#031b2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart">
+            <path d="M20.8 4.6c-1.6-1.5-4.1-1.5-5.6 0l-1.2 1.1-1.2-1.1c-1.5-1.5-4.1-1.5-5.6 0-1.5 1.6-1.5 4.1 0 5.6l6.8 6.7 6.8-6.7c1.5-1.5 1.5-4.1 0-5.6z"/>
+            </svg>
+          </a>
+
           <a href="#"
             ><img
               src="media/utility/iconCart.svg"
@@ -144,42 +146,63 @@
       <hr class="lineaHeader" />
 
       <!-- HEADER INFERIOR -->
-      <div id="cabeceraInferior">
-        <!-- CENTRO: OPCIONES -->
+        <div id="cabeceraInferior">
         <div id="contenedorMedioInferior">
-          <a href="#" class="linkMid"
-            >Home
-            <img
-              src="media/utility/menuDesplegable.svg"
-              alt=""
-              class="iconoDesplegable"
-          /></a>
-          <a href="#" class="linkMid">About</a>
-          <a href="#" class="linkMid"
-            >Shop
-            <img
-              src="media/utility/menuDesplegable.svg"
-              alt=""
-              class="iconoDesplegable"
-          /></a>
-          <a href="#" class="linkMid"
-            >Blog
-            <img
-              src="media/utility/menuDesplegable.svg"
-              alt=""
-              class="iconoDesplegable"
-          /></a>
-          <a href="#" class="linkMid"
-            >Pages
-            <img
-              src="media/utility/menuDesplegable.svg"
-              alt=""
-              class="iconoDesplegable"
-          /></a>
-          <a href="#" class="linkMid">Contact</a>
+          <a href="#" class="linkMid">
+            Inicio
+            <img src="media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable"/>
+          </a>
+          <a href="#" class="linkMid">Acerca de</a>
+          <a href="#" class="linkMid">
+            Tienda
+            <img src="media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable"/>
+          </a>
+          <a href="#" class="linkMid">
+            Blog
+            <img src="media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable"/>
+          </a>
+          <a href="#" class="linkMid">Contacto</a>
+
+          <!-- NUEVOS LINKS ESTÉTICOS CON EMOJIS -->
+          <div class="dropdown estético">
+            <a href="#" class="linkMid">
+              Componentes
+              <img src="media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable"/>
+            </a>
+            <div class="dropdown-content">
+              <a href="#">💻 Procesadores</a>
+              <a href="#">🎮 Tarjetas Gráficas</a>
+              <a href="#">🧠 Memoria y Almacenamiento</a>
+              <a href="#">🖥️ Placas Base</a>
+            </div>
+          </div>
+
+          <div class="dropdown estético">
+            <a href="#" class="linkMid">
+              Periféricos
+              <img src="media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable"/>
+            </a>
+            <div class="dropdown-content">
+              <a href="#">⌨️ Teclados</a>
+              <a href="#">🖱️ Ratones</a>
+              <a href="#">🖥️ Monitores</a>
+              <a href="#">🎧 Auriculares</a>
+            </div>
+          </div>
+
+          <div class="dropdown estético">
+            <a href="#" class="linkMid">
+              Ofertas
+              <img src="media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable"/>
+            </a>
+            <div class="dropdown-content">
+              <a href="#">💰 Paquetes con descuento</a>
+              <a href="#">🛒 Liquidación</a>
+              <a href="#">🆕 Novedades</a>
+            </div>
+          </div>
         </div>
       </div>
-    </header>
 
     <!-- BANNER -->
     <div id="banner">
@@ -235,8 +258,8 @@
     <!-- SHOP BY CATEGORY -->
     <div class="itemCategories">
       <div class="categoryTitle">
-        <span class="tituloCategoria">Shop By Category</span>
-        <div class="lineaCat1">Visit our shop to see amazing products</div>
+        <span class="tituloCategoria">Tienda de Componentes</span>
+        <div class="lineaCat1">Visita nuestra tienda para ver todo tipo de componentes</div>
         <hr class="lineaCat" />
       </div>
 
@@ -279,7 +302,7 @@
         <!-- IZQUIERDA: Texto -->
         <div class="footer-izquierda">
           <p>
-            Copyright © 2020 <span class="ekomart-verde">ekommart</span>. All
+            Copyright © 2025 <span class="ekomart-verde">amamortadela</span>. All
             Rights Reserved.
           </p>
         </div>
@@ -312,5 +335,31 @@
         </div>
       </div>
     </footer>
+
+    <script>
+            const btnSearch = document.getElementById("btnSearch");
+            const searchBox = document.getElementById("searchBox");
+
+            btnSearch.addEventListener("click", (e) => {
+              e.preventDefault(); // evita que recargue la página
+              searchBox.style.display =
+                searchBox.style.display === "block" ? "none" : "block";
+            });
+
+            // Cierra el buscador si se hace click fuera de él
+            document.addEventListener("click", (e) => {
+              if (!searchBox.contains(e.target) && !btnSearch.contains(e.target)) {
+                searchBox.style.display = "none";
+              }
+            });
+           
+            const wishlistIcon = document.getElementById("iconWishlist");
+            const btnWishlist = document.getElementById("btnWishlist");
+
+            btnWishlist.addEventListener("click", (e) => {
+              e.preventDefault();
+              wishlistIcon.classList.toggle("active");
+            });
+          </script>
   </body>
 </html>
