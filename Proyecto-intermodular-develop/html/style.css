@@ -1,0 +1,593 @@
+/* Contenedor del menú */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Contenido oculto del desplegable */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 120px;
+  box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Estilo de los enlaces dentro del dropdown */
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #125590; /* tu color linkArriba */
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Mostrar el dropdown al hacer hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* ========================
+   FUENTE GLOBAL
+======================== */
+body {
+  font-family: "Gilroy", "HelveticaNeue-Light", "Helvetica Neue Light",
+               "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+/* ========================
+   HEADER SUPERIOR
+======================== */
+#cabeceraSuperior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+}
+
+#topIzquierda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: nowrap;
+  margin-left: 50px;
+}
+
+#topIzquierda a,
+#topIzquierda b {
+  color: #031b2f;
+  text-decoration: none; 
+  font-size: 14px;
+}
+
+.iconoDesplegable {
+  width: 10px;       
+  height: auto;
+  vertical-align: middle; 
+  margin-left: 5px;       
+}
+
+.separador {
+  color: #909090;
+}
+
+#freeExpress {
+  font-weight: bold;
+}
+
+#redesSocialesDerecha {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+#redesSocialesDerecha a {
+  text-decoration: none; 
+}
+
+.iconoRedesSocial {
+  width: 30px;
+  height: auto;
+}
+
+.lineaHeader {
+  border: 0.5px solid rgba(144, 144, 144, 0.438);
+  width: 100%;           
+  max-width: 100vw;     
+  overflow: hidden;  
+}
+
+/* ========================
+   HEADER CENTRAL
+======================== */
+#cabeceraMedia {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+#seccionIzquierda {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 15px;
+}
+
+.iconoHeadset {
+  width: 40px;
+  height: auto;
+}
+
+.contenedorCall {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.callUs {
+  font-weight: bold;
+  color: #031b2f;
+  font-size: 14px;
+}
+
+.numTelf {
+  font-size: 14px;
+  color: #031b2f;
+  margin-top: 2px;
+}
+
+#contenedorLogo {
+  flex-grow: 1; 
+  display: flex;
+  justify-content: center;
+}
+
+#logoMain {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+#logoEkommart {
+  width: 150px;
+  height: auto;
+}
+
+#seccionDerecha {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#seccionDerecha a {
+  text-decoration: none; 
+}
+
+.iconTopRight, #iconSearch {
+  width: 35px;
+  height: auto;
+  cursor: pointer;
+}
+
+/* ========================
+   HEADER INFERIOR
+======================== */
+#cabeceraInferior {
+  display: flex;
+  justify-content: center; /* mantiene todo centrado */
+  background-color: #fff;
+  padding: 10px 20px;
+}
+
+#contenedorMedioInferior {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Estilo links principales */
+.linkMid {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #125590;
+  font-weight: 600;
+  font-size: 15px;
+  text-decoration: none;
+  padding: 5px 8px;
+  transition: color 0.3s, background 0.3s;
+  border-radius: 6px;
+}
+
+.linkMid:hover {
+  color: #ffffff;
+  background-color: #125590;
+}
+
+.linkMid img.iconoDesplegable {
+  width: 10px;
+  height: auto;
+  margin-left: 4px;
+  vertical-align: middle;
+  transition: transform 0.3s;
+}
+
+.dropdown:hover > a img.iconoDesplegable {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  margin-top: 8px;
+  min-width: 180px;
+  z-index: 100;
+  overflow: hidden;
+  padding: 8px 0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  color: #125590;
+  font-size: 14px;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-content a:hover {
+  background-color: #125590;
+  color: #ffffff;
+}
+
+.iconoDropdown {
+  width: 20px;
+  height: auto;
+}
+
+/* ========================
+       BANNER
+======================== */
+#banner {
+  margin-top: 10px;
+  position: relative;      
+  width: 100%;
+  height: 400px;           
+  overflow: hidden;
+}
+
+#banner .imgBanner {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       
+  display: block;
+  z-index: 1;              
+}
+
+.botonComprar {
+  position: absolute;      
+  top: 45%;                
+  left: 10%;               
+  transform: translate(-50%, -50%); 
+  background-color: #0357b831; 
+  color: #fff;            
+  padding: 20px 35px;      
+  text-decoration: none;   
+  font-weight: bold;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  z-index: 2;              
+}
+
+.textoBanner {
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  transform: translate(0, -50%);
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  z-index: 2;
+}
+
+.textoBanner .linea1 {
+  font-size: 3rem; 
+}
+
+.textoBanner .linea2 {
+  font-size: 2rem;
+  margin-top: 4px;
+}
+
+.textoBanner .linea3 {
+  font-size: 1rem;
+  margin-top: 4px;
+  font-weight: 400; 
+  font-family: "Gilroy", "HelveticaNeue-Light", "Helvetica Neue Light",
+               "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bolder;
+}
+
+/* ========================
+      SUB-BANNER
+======================== */
+#subBanner {
+  display: flex;
+  justify-content: space-around; 
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f8f8;
+  flex-wrap: wrap; 
+  gap: 20px;
+}
+
+.itemSubBanner {
+  display: flex;
+  align-items: center; 
+  gap: 10px;
+}
+
+.iconoSubBanner {
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  display: block;
+  margin-top: -15px; 
+}
+
+.textoSubBanner {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.textoSubBanner .titulo {
+  font-weight: bold;
+  color: #031b2f;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+.textoSubBanner .descripcion {
+  font-size: 14px;
+  color: #555555a4;
+  margin-top: 2px;
+}
+
+.lineaBody {
+  border: 0.5px solid rgba(144, 144, 144, 0.438);
+  width: 100%;           
+  max-width: 100vw;     
+  overflow: hidden;  
+  margin-top: 20px;
+}
+
+/* ========================
+      CATEGORÍAS
+======================== */
+.tituloCategoria {
+  font-family: "Love Ya Like A Sister", cursive;
+  font-weight: 700;
+  font-size: 50px;
+  color: rgb(0, 0, 0);
+  text-align: center;   
+  margin: 50px auto 0 auto;
+  display: block;      
+}
+
+.lineaCat1{
+  font-size: 1rem;
+  margin-top: 10px;
+  font-weight: bolder;
+  color: #555555a4;
+  text-align: center;   
+  display: block;
+  font-family: "Gilroy", "HelveticaNeue-Light", "Helvetica Neue Light",
+               "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.lineaCat {
+  border: 0.5px solid ;
+  width: 5%;           
+  max-width: 100vw;     
+  overflow: hidden;  
+  margin-top: 20px;
+  color: #0357b831;
+}
+
+.categorias {
+  margin: 40px auto;
+}
+
+.galeria {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.item {
+  text-align: center;
+}
+
+.item img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid #909090;
+  border-radius: 8px;
+}
+
+.item a img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.item a img:hover {
+  transform: scale(1.05);
+}
+
+.categoria {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #031b2f;
+  font-weight: bold;
+}
+
+.lineaFooter {
+  border: 0.5px solid ;
+  width: 5%;           
+  max-width: 100vw;     
+  overflow: hidden;  
+  margin-top: 20px;
+  color: #909090;
+  margin-bottom: 50px;
+}
+
+/* ========================
+      FOOTER
+======================== */
+
+#footer {
+  background-color: #f8f8f8;
+  padding: 30px 60px;
+}
+
+.footer-contenedor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: #252525;
+  gap: 20px;
+    padding: 15px;
+
+}
+
+.footer-izquierda p {
+  font-size: 14px;
+  color: #909090;
+  margin: 0;
+}
+
+.footer-centro {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-icono {
+  width: 30px;
+  height: auto;
+  cursor: pointer;
+}
+
+.footer-derecha .footer-imagen {
+  width: 200px;
+  height: auto;
+}
+
+.footer-brand {
+  color: #0357b831; /* verde */
+  font-weight: bold;
+}
+
+/* ========================
+   CUADRO DE BÚSQUEDA
+======================== */
+#searchBox {
+  display: none; /* oculto por defecto */
+  position: absolute;
+  top: 70px; /* ajusta según altura del header */
+  right: 50px;
+  background: #fff;
+  border: 2px solid #125590;
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+}
+
+#searchBox input {
+  width: 250px;
+  padding: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+}
+
+#searchBox {
+  display: none;                 /* oculto por defecto */
+  position: absolute;            /* relativo a la página */
+  top: 14%;                      /* lo bajamos un poco para alinearlo */
+  right: 220px;                   /* ajusta según la posición de la lupa */
+  transform: translateY(-50%);   /* lo centra verticalmente respecto al header */
+  background: #fff;
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;           /* esquinas redondeadas tipo pill */
+  z-index: 999;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+#searchBox input {
+  width: 220px;                  /* más pequeño y elegante */
+  border: none;                  /* sin borde extra */
+  outline: none;                 /* quitamos contorno feo */
+  font-size: 14px;
+}
+
+#iconWishlist {
+  cursor: pointer;
+  transition: transform 0.2s ease, fill 0.2s ease;
+  fill: none;
+}
+
+#iconWishlist.active {
+  fill: red;        /* relleno rojo */
+  transform: scale(1.2);
+}
+
+/* NUEVAS SECCIONES DROPDOWN */
+.dropdown-content a {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #031b2f;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+

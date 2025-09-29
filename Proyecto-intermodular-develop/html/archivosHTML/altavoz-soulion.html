@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Producto</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    
+  <div class="card">
+    <img id="imagen" src="../media/img/sonidos/Altavoz soulion.png" alt="Raton">
+    <div class="card-content">
+      <h2>Laptop</h2>
+      <input type="text" id="quantity" value="125.99" readonly> €
+      <p class="description">Altavos soulion con Dolby Atmos incorporado para un sonido envolvente</p>
+      
+      <div class="quantity">
+        <button onclick="restar()">-</button>
+        <input id="cantidad" type="number" value=1>
+        <button onclick="sumar()">+</button>
+      </div>
+
+      <a href="index.html">
+      <button class="btn-primary">Añadir al carrito</button>
+      </a>
+
+      <a href="index.html">
+      <button class="btn-secondary">Seguir comprando</button>
+      </a>
+    </div>
+  </div>
+  <script>
+        function sumar()
+        {
+            let cantidad = document.getElementById("cantidad");
+            cantidad.value++;
+            
+        }
+
+        function restar()
+        {
+            let cantidad = document.getElementById("cantidad");
+            if(cantidad.value > 0)
+            {
+                cantidad.value--;
+            }
+            
+        }
+    </script>
+</body>
+</html>
