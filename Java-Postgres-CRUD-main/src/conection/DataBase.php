@@ -1,9 +1,9 @@
 <?php
 class Database {
-    private $host = "localhost";   // tu host
-    private $db_name = "mi_base";  // nombre de la base de datos
+    private $host = "mysql_db";   // tu host
+    private $db_name = "Productosdb";  // nombre de la base de datos
     private $username = "root";    // usuario
-    private $password = "";        // contraseña
+    private $password = "rootpass";        // contraseña
     private $conn;
 
     public function getConnection() {
