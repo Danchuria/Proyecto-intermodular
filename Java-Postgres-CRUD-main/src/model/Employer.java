@@ -10,13 +10,11 @@ public class Employer extends User {
     private double descuento;
     private String IBAN;
 
-    // Constructor vacío
     public Employer() {
         super();
         this.setTipoUsuario("EMPLOYER");
     }
 
-    // Constructor con parámetros
     public Employer(int idUser, int numeroTelefono, String email, String nombre,
                     Date fechaContrato, String departamento, double salario,
                     String rango, double descuento, String IBAN) {
@@ -29,7 +27,6 @@ public class Employer extends User {
         this.IBAN = IBAN;
     }
 
-    // Getters y Setters
     public Date getFechaContrato() {
         return fechaContrato;
     }

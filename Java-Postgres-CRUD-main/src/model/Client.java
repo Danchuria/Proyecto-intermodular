@@ -3,19 +3,16 @@ package model;
 public class Client extends User {
     private String IBAN;
 
-    // Constructor vacío
     public Client() {
         super();
         this.setTipoUsuario("CLIENTE");
     }
 
-    // Constructor con parámetros
     public Client(int idUser, int numeroTelefono, String email, String nombre, String IBAN) {
         super(idUser, numeroTelefono, email, nombre, "CLIENTE");
         this.IBAN = IBAN;
     }
 
-    // Getters y Setters
     public String getIBAN() {
         return IBAN;
     }

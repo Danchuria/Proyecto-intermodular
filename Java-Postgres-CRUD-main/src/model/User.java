@@ -5,13 +5,11 @@ public class User {
     private int numeroTelefono;
     private String email;
     private String nombre;
-    private String tipoUsuario; // "CLIENTE" o "EMPLOYER"
+    private String tipoUsuario;
 
-    // Constructor vacío
     public User() {
     }
 
-    // Constructor con parámetros
     public User(int idUser, int numeroTelefono, String email, String nombre, String tipoUsuario) {
         this.idUser = idUser;
         this.numeroTelefono = numeroTelefono;
@@ -20,7 +18,6 @@ public class User {
         this.tipoUsuario = tipoUsuario;
     }
 
-    // Getters y Setters
     public int getIdUser() {
         return idUser;
     }

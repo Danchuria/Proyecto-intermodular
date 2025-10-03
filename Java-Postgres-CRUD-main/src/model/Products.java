@@ -1,14 +1,12 @@
 package model;
 
 public class Products {
-	// Atributos
 	private int idProducto;
 	private String nombre;
 	private String categoria;
 	private int cantidad;
 	private double precio;
 
-	// Constructor
 	public Products(int idProducto, String nombre, String categoria, int cantidad, double precio) {
 		this.idProducto = idProducto;
 		this.nombre = nombre;
@@ -20,7 +18,6 @@ public class Products {
 	public Products() {
 	}
 
-	// Metodos Getters y Setters
 	public int getIdProducto() {
 		return idProducto;
 	}
@@ -67,4 +64,4 @@ public class Products {
 				+ '\'' + ", cantidad=" + cantidad + ", precio=" + precio + '}';
 	}
 
-} // FINAL CLASS
+}
