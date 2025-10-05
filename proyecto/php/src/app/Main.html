@@ -1,0 +1,88 @@
+<?php
+require_once "ProductsCRUD.php";
+
+$crud = new ProductsCRUD();
+
+// Insertar productos de prueba
+$p1 = new Products(1, "Laptop Dell", "Electrónica", 5, 899.99);
+$p2 = new Products(2, "Silla Gamer", "Muebles", 10, 199.99);
+$p3 = new Products(3, "Teclado Mecánico", "Electrónica", 15, 89.99);
+
+$crud->insertarProducto($p1);
+$crud->insertarProducto($p2);
+$crud->insertarProducto($p3);
+
+// Obtener listas y búsquedas
+$productos = $crud->obtenerProductos();
+$buscados = $crud->buscarProductos("Electrónica");
+
+// Actualizar Laptop Dell
+$p1->setPrecio(799.99);
+$crud->actualizarProducto($p1);
+$productoActualizado = $crud->buscarProductos("Laptop");
+
+// Eliminar Silla Gamer
+$crud->eliminarProducto(2);
+$productosFinal = $crud->obtenerProductos();
+?>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Prueba CRUD Productos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-4">
+        <h1 class="text-center text-primary">🔹 Prueba CRUD de Productos</h1>
+        
+        <!-- Lista inicial -->
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-primary text-white">Lista de productos (después de insertar)</div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <?php foreach ($productos as $p): ?>
+                        <li class="list-group-item"><?= $p ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Búsqueda -->
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-success text-white">Buscar productos con "Electrónica"</div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <?php foreach ($buscados as $b): ?>
+                        <li class="list-group-item"><?= $b ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Actualización -->
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-warning text-dark">Laptop Dell después de actualizar precio</div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <?php foreach ($productoActualizado as $pa): ?>
+                        <li class="list-group-item"><?= $pa ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Lista final -->
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-danger text-white">Lista final (después de eliminar Silla Gamer)</div>
+            <div class="card-body">
+                <ul class="list-group">
+                    <?php foreach ($productosFinal as $pf): ?>
+                        <li class="list-group-item"><?= $pf ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

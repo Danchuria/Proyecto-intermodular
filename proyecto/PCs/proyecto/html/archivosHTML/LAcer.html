@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de Producto</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    
+  <div class="card">
+    <img id="imagen" src="../media/img/laptops/asus.webp" alt="Raton">
+    <div class="card-content">
+      <h2>ASUS TUF Gaming i7</h2>
+      <input type="text" id="quantity" value="419.00" readonly> €
+      <p class="description">Económico y eficiente para oficina. Procesador AMD Ryzen 5, SSD rápido. Pantalla de 15,6″ Full HD, buena autonomía.</p>
+      
+      <div class="quantity">
+        <button onclick="restar()">-</button>
+        <input id="cantidad" type="number" value=1>
+        <button onclick="sumar()">+</button>
+      </div>
+
+      <a href="index.html">
+      <button class="btn-primary">Añadir al carrito</button>
+      </a>
+
+      <a href="index.html">
+      <button class="btn-secondary">Seguir comprando</button>
+      </a>
+    </div>
+  </div>
+  <script>
+        function sumar()
+        {
+            let cantidad = document.getElementById("cantidad");
+            cantidad.value++;
+            
+        }
+
+        function restar()
+        {
+            let cantidad = document.getElementById("cantidad");
+            if(cantidad.value > 0)
+            {
+                cantidad.value--;
+            }
+            
+        }
+    </script>
+</body>
+</html>
