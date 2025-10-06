@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>amamortadela</title>
+  <link rel="stylesheet" href="../style.css" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+</head>
+
+<body>
+  <header>
+    <!-- HEADER CENTRAL -->
+    <div id="cabeceraMedia" style="display: flex; align-items: center;">
+      <!-- IZQUIERDA: CALL US + número -->
+      <div id="seccionIzquierda" style="display: flex; align-items: center;">
+        <img src="../media/utility/iconHeadset.svg" alt="Call Us" class="iconoHeadset" />
+        <div class="contenedorCall">
+          <span class="callUs">LLAMANOS!</span>
+          <p class="numTelf">+34 768 345 325</p>
+        </div>
+      </div>
+
+      <!-- CENTRO: LOGO y SALUDO USUARIO -->
+      <div id="seccionMedio" style="display: flex; align-items: center; margin-left: 2rem;">
+        <div id="contenedorLogo" style="display: flex; align-items: center;">
+          <a href="index.html" id="logoMain">
+            <h1><b>amamortadela</b></h1>
+          </a>
+          <!-- Contenedor para saludo usuario -->
+          <div id="userGreeting" style="margin-left: 1rem; font-weight: bold; color: #007bff; font-size: 1rem;"></div>
+        </div>
+      </div>
+
+      <!-- DERECHA: Lupa, wishlist, carrito, usuario -->
+      <div id="seccionDerecha" style="margin-left: auto; display: flex; align-items: center; gap: 1rem;">
+        <a href="#" id="btnSearch">
+          <img src="../media/utility/iconSearch.svg" alt="Search" id="iconSearch" />
+        </a>
+
+        <!-- CAMPO DE BÚSQUEDA OCULTO -->
+        <div id="searchBox" style="display:none;">
+          <input type="text" placeholder="Buscar productos..." />
+        </div>
+
+        <a href="#" id="btnWishlist">
+          <svg id="iconWishlist" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24"
+            fill="none" stroke="#031b2f" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-heart">
+            <path
+              d="M20.8 4.6c-1.6-1.5-4.1-1.5-5.6 0l-1.2 1.1-1.2-1.1c-1.5-1.5-4.1-1.5-5.6 0-1.5 1.6-1.5 4.1 0 5.6l6.8 6.7 6.8-6.7c1.5-1.5 1.5-4.1 0-5.6z" />
+          </svg>
+        </a>
+
+        <a href="#"><img src="../media/utility/iconCart.svg" alt="Cart" class="iconTopRight" /></a>
+        <a href="inicio.html"><img src="../media/utility/iconUser.svg" alt="User" class="iconTopRight" /></a>
+      </div>
+    </div>
+
+    <hr class="lineaHeader" />
+
+    <!-- HEADER INFERIOR -->
+    <div id="cabeceraInferior">
+      <div id="contenedorMedioInferior">
+        <a href="#" class="linkMid">
+          Inicio
+          <img src="../media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable" />
+        </a>
+        <a href="#" class="linkMid">Acerca de</a>
+        <a href="#" class="linkMid">
+          Tienda
+          <img src="../media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable" />
+        </a>
+        <a href="#" class="linkMid">
+          Blog
+          <img src="../media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable" />
+        </a>
+        <a href="#" class="linkMid">Contacto</a>
+
+        <!-- NUEVOS LINKS ESTÉTICOS CON EMOJIS -->
+        <div class="dropdown estético">
+          <a href="#" class="linkMid">
+            Componentes
+            <img src="../media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable" />
+          </a>
+          <div class="dropdown-content">
+            <a href="#">💻 Procesadores</a>
+            <a href="#">🎮 Tarjetas Gráficas</a>
+            <a href="#">🧠 Memoria y Almacenamiento</a>
+            <a href="#">🖥️ Placas Base</a>
+          </div>
+        </div>
+
+        <div class="dropdown estético">
+          <a href="#" class="linkMid">
+            Periféricos
+            <img src="../media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable" />
+          </a>
+          <div class="dropdown-content">
+            <a href="#">⌨️ Teclados</a>
+            <a href="#">🖱️ Ratones</a>
+            <a href="#">🖥️ Monitores</a>
+            <a href="#">🎧 Auriculares</a>
+          </div>
+        </div>
+
+        <div class="dropdown estético">
+          <a href="#" class="linkMid">
+            Ofertas
+            <img src="../media/utility/menuDesplegable.svg" alt="" class="iconoDesplegable" />
+          </a>
+          <div class="dropdown-content">
+            <a href="#">💰 Paquetes con descuento</a>
+            <a href="#">🛒 Liquidación</a>
+            <a href="#">🆕 Novedades</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BANNER -->
+    <div id="banner">
+      <img src="../media/img/photoBanner2.jpg" alt="" class="imgBanner" />
+      <!-- <a href="#" class="botonComprar">SHOP NOW</a> -->
+      <div class="textoBanner">
+        <div class="linea1">Tu tienda informática</div>
+        <div class="linea2">de confíanza</div>
+      </div>
+    </div>
+
+    <!-- SHOP BY CATEGORY -->
+    <div class="itemCategories">
+      <div class="categoryTitle">
+        <span class="tituloCategoria">Tienda de Componentes</span>
+        <div class="lineaCat1">Visita nuestra tienda para ver todo tipo de componentes</div>
+        <hr class="lineaCat" />
+      </div>
+
+      <!-- PRODUCTOS -->
+      <div class="categorias">
+        <div class="galeria">
+          <div class="item">
+            <a href="laptops.html">
+              <img src="../media/img/bannerLaptop2.png" alt="Laptop HP" />
+            </a>
+            <p class="categoria">Portatiles</p>
+          </div>
+
+          <div class="item">
+            <a href="PCs.html">
+              <img src="../media/img/bannerPC.png" alt="" />
+            </a>
+            <p class="categoria">PCs</p>
+          </div>
+
+          <div class="item">
+            <a href="componentes.html">
+              <img src="../media/img/bannerComponentes.png" alt="" />
+            </a>
+            <p class="categoria">Componentes</p>
+          </div>
+
+          <div class="item">
+            <a href="periféricos.html">
+              <img src="../media/img/bannerPerifericos.png" alt="" />
+            </a>
+            <p class="categoria">Periféricos</p>
+          </div>
+
+          <div class="item">
+            <a href="smartphones.html">
+              <img src="../media/img/bannerSmartphones.png" alt="" />
+            </a>
+            <p class="categoria">Smartphones</p>
+          </div>
+
+          <div class="item">
+            <a href="sonido.html">
+              <img src="../media/img/bannerSonido.png" alt="" />
+            </a>
+            <p class="categoria">Sonido</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="lineaFooter" />
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-contenedor">
+        <!-- IZQUIERDA: Sobre la tienda -->
+        <div class="footer-col">
+          <h3 class="footer-titulo">amamortadela</h3>
+          <p class="footer-descripcion">
+            Tu tienda de confianza en tecnología y componentes.  
+            Calidad, garantía y atención personalizada al mejor precio.
+          </p>
+        </div>
+
+        <!-- CENTRO: Enlaces rápidos -->
+        <div class="footer-col">
+          <h4 class="footer-titulo">Enlaces</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="#">Acerca de</a></li>
+            <li><a href="#">Tienda</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+
+        <!-- DERECHA: Contacto -->
+        <div class="footer-col">
+          <h4 class="footer-titulo">Contáctanos</h4>
+          <p>📞 +34 768 345 325</p>
+          <p>✉️ info@amamortadela.com</p>
+          <div class="footer-redes">
+            <a href="#"><img src="../media/logos/logoFacebook1.svg" alt="Facebook" /></a>
+            <a href="#"><img src="../media/logos/logoTwitter1.svg" alt="Twitter" /></a>
+            <a href="#"><img src="../media/logos/logoInstagram1.svg" alt="Instagram" /></a>
+            <a href="#"><img src="../media/logos/logoYoutube1.svg" alt="YouTube" /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  </header>
+
+  <!-- SCRIPT PARA MOSTRAR EL SALUDO DEL USUARIO LOGUEADO -->
+  <script>
+    // Mostrar saludo si hay usuario logueado
+    const userGreeting = document.getElementById('userGreeting');
+    const userStr = localStorage.getItem('user');
+    const loggedIn = localStorage.getItem('loggedIn');
+
+    if (loggedIn !== 'true' || !userStr) {
+      window.location.href = 'inicio.html';  // Redirige al login si no está logueado
+    } else {
+      const user = JSON.parse(userStr);
+      userGreeting.innerHTML = `Hola, ${user.name} <button id="logoutBtn" style="margin-left:10px; padding: 4px 8px; border:none; border-radius:4px; background:#007bff; color:white; cursor:pointer;">Cerrar sesión</button>`;
+
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        localStorage.setItem('loggedIn', 'false');
+        localStorage.removeItem('user');
+        window.location.href = 'inicio.html';
+      });
+    }
+  </script>
+</body>
+
+</html>

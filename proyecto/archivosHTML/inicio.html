@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Registro / Login - Tech Style</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      background: #f5f5f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 2rem 3rem;
+      max-width: 420px;
+      width: 100%;
+    }
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 2rem;
+      cursor: pointer;
+      user-select: none;
+    }
+    .tab {
+      flex: 1;
+      padding: 0.8rem 0;
+      text-align: center;
+      font-weight: bold;
+      color: #555;
+      border-bottom: 3px solid transparent;
+      transition: all 0.3s ease;
+    }
+    .tab.active {
+      color: #007bff;
+      border-bottom-color: #007bff;
+    }
+    .form-container {
+      display: none;
+      flex-direction: column;
+    }
+    .form-container.active {
+      display: flex;
+    }
+    label {
+      font-size: 0.9rem;
+      color: #333;
+      margin-bottom: 0.3rem;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    select {
+      padding: 10px 12px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+      margin-bottom: 1.3rem;
+      transition: border-color 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus,
+    select:focus {
+      border-color: #007bff;
+      outline: none;
+    }
+    button {
+      padding: 12px;
+      border-radius: 6px;
+      border: none;
+      background: #007bff;
+      color: white;
+      font-weight: bold;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .error {
+      color: red;
+      margin-bottom: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="tabs">
+      <div class="tab active" data-tab="login">Iniciar Sesión</div>
+      <div class="tab" data-tab="register">Registrarse</div>
+    </div>
+
+    <!-- LOGIN SIN FORM -->
+    <div id="login" class="form-container active">
+      <div class="error" id="login-error"></div>
+      <label for="login-email">Correo electrónico</label>
+      <input type="email" id="login-email" placeholder="tuemail@ejemplo.com" required />
+
+      <label for="login-password">Contraseña</label>
+      <input type="password" id="login-password" placeholder="********" required />
+
+      <button id="login-btn">Entrar</button>
+    </div>
+
+    <!-- REGISTRO SIN FORM -->
+    <div id="register" class="form-container">
+      <div class="error" id="register-error"></div>
+
+      <label for="register-name">Nombre completo</label>
+      <input type="text" id="register-name" placeholder="Tu nombre completo" required />
+
+      <label for="register-email">Correo electrónico</label>
+      <input type="email" id="register-email" placeholder="tuemail@ejemplo.com" required />
+
+      <label for="register-password">Contraseña</label>
+      <input type="password" id="register-password" placeholder="********" required />
+
+      <label for="register-phone">Teléfono</label>
+      <input type="text" id="register-phone" placeholder="Tu número de teléfono" required />
+
+      <button id="register-btn">Registrarse</button>
+    </div>
+  </div>
+
+  <script>
+    // Tabs control
+    const tabs = document.querySelectorAll('.tab');
+    const forms = document.querySelectorAll('.form-container');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const target = tab.dataset.tab;
+        forms.forEach(form => {
+          if (form.id === target) {
+            form.classList.add('active');
+          } else {
+            form.classList.remove('active');
+          }
+        });
+
+        // Clear errors on tab switch
+        document.getElementById('login-error').textContent = '';
+        document.getElementById('register-error').textContent = '';
+      });
+    });
+
+    // Guardar usuario en localStorage
+    function saveUser(user) {
+      localStorage.setItem('user', JSON.stringify(user));
+    }
+
+    // Obtener usuario de localStorage
+    function getUser() {
+      const userStr = localStorage.getItem('user');
+      return userStr ? JSON.parse(userStr) : null;
+    }
+
+    // Guardar estado login
+    function setLoggedIn(status) {
+      localStorage.setItem('loggedIn', status ? 'true' : 'false');
+    }
+
+    // Revisar si ya está logueado para redirigir
+    if(localStorage.getItem('loggedIn') === 'true'){
+      window.location.href = 'index.html';
+    }
+
+    // Registro
+    const registerBtn = document.getElementById('register-btn');
+    const registerError = document.getElementById('register-error');
+
+    registerBtn.addEventListener('click', () => {
+      const name = document.getElementById('register-name').value.trim();
+      const email = document.getElementById('register-email').value.trim().toLowerCase();
+      const password = document.getElementById('register-password').value;
+      const phone = document.getElementById('register-phone').value.trim();
+      const userType = document.getElementById('register-type').value;
+
+      registerError.textContent = '';
+
+      if(!name || !email || !password || !phone || !userType){
+        registerError.textContent = 'Por favor, rellena todos los campos.';
+        return;
+      }
+
+      const existingUser = getUser();
+      if(existingUser && existingUser.email === email){
+        registerError.textContent = 'Este correo ya está registrado.';
+        return;
+      }
+
+      const user = { name, email, password, phone, userType };
+      saveUser(user);
+      setLoggedIn(true);
+
+      window.location.href = 'index.html';
+    });
+
+    // Login
+    const loginBtn = document.getElementById('login-btn');
+    const loginError = document.getElementById('login-error');
+
+    loginBtn.addEventListener('click', () => {
+      const email = document.getElementById('login-email').value.trim().toLowerCase();
+      const password = document.getElementById('login-password').value;
+
+      loginError.textContent = '';
+
+      const user = getUser();
+      if(!user){
+        loginError.textContent = 'No hay usuarios registrados.';
+        return;
+      }
+      if(user.email !== email || user.password !== password){
+        loginError.textContent = 'Correo o contraseña incorrectos.';
+        return;
+      }
+
+      setLoggedIn(true);
+      window.location.href = 'index.html';
+    });
+  </script>
+
+</body>
+</html>
+
+
