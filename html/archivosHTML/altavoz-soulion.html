@@ -31,22 +31,21 @@
     </div>
   </div>
   <script>
-        function sumar()
-        {
-            let cantidad = document.getElementById("cantidad");
-            cantidad.value++;
-            
-        }
-
-        function restar()
-        {
-            let cantidad = document.getElementById("cantidad");
-            if(cantidad.value > 0)
-            {
-                cantidad.value--;
-            }
-            
-        }
-    </script>
+    carrito();
+    function sumar()
+    {
+      let cantidad = document.getElementById("cantidad");
+      cantidad.value++;    
+    }
+        
+    function restar()
+    {
+      let cantidad = document.getElementById("cantidad");
+      if(cantidad.value > 0)
+      {
+        cantidad.value--;
+      }  
+    }
+  </script>
 </body>
 </html>
