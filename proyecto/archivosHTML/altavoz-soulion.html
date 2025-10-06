@@ -31,7 +31,8 @@
     </div>
   </div>
   <script>
-    function carrito() {
+    function carrito() 
+    {
       // ✅ Aseguramos que el elemento existe antes de añadir el listener
       const boton = document.getElementById("btn-primary");
       boton.addEventListener("click", function() {
@@ -64,6 +65,7 @@
         .catch(error => console.error("Error:", error));
       });
     }
+    
     function sumar()
     {
       let cantidad = document.getElementById("cantidad");
@@ -78,6 +80,6 @@
         cantidad.value--;
       }  
     }
-  </script>
+    </script>
 </body>
 </html>
