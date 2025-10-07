@@ -11,6 +11,8 @@ html
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Love+Ya+Like+A+Sister&display=swap" rel="stylesheet">
 
+  Si llegais a tener problemas con la conexión,tenemos que poner en la base de datos que se autoincremente la clave primaria
+
 css
   /* ========================
    FUENTE GLOBAL
